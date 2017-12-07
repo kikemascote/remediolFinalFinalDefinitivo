@@ -9,7 +9,7 @@ public class App {
         Arbol<Alumno> rank = new Arbol<>();
         node<String>[] mat = new node[4];
         for (int i = 0; i < mat.length; i++) {
-            mat[i]=new node<>();
+            mat[i] = new node<>();
         }
         mat[0].setValue("Estructuras de Datos");
         mat[1].setValue("Bases de Datos");
@@ -22,7 +22,7 @@ public class App {
         Alumno[] alumno;
         alumno = new Alumno[5];
         for (int i = 0; i < alumno.length; i++) {
-            alumno[i]=new Alumno();
+            alumno[i] = new Alumno();
             alumno[i].setNombre("Juan " + i);
             for (int j = 0; j < mat.length; j++) {
                 alumno[i].addMateria(mat[j].getValue());

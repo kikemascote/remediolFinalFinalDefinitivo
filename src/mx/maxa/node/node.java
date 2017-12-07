@@ -1,10 +1,19 @@
 package mx.maxa.node;
 
-public class node<T> implements Comparable<T>{
+public class node<T> implements Comparable<T> {
     private T value;
-    private node<T> Left=null;
-    private node<T> Right=null;
+    private node<T> Left = null;
+    private node<T> Right = null;
     private long index = 0;
+
+    public node() {
+        this.value = null;
+
+    }
+
+    public node(T value) {
+        this.value = value;
+    }
 
     public long getIndex() {
         return index;
@@ -12,15 +21,6 @@ public class node<T> implements Comparable<T>{
 
     public void setIndex(long index) {
         this.index = index;
-    }
-
-    public node(){
-        this.value = null;
-
-    }
-
-    public node(T value) {
-        this.value = value;
     }
 
     @Override
@@ -58,8 +58,6 @@ public class node<T> implements Comparable<T>{
     public void setRight(node<T> right) {
         Right = right;
     }
-
-
 
 
 }
