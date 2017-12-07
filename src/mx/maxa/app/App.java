@@ -4,10 +4,26 @@ import mx.maxa.alumno.Alumno;
 import mx.maxa.node.node;
 import mx.maxa.tree.Arbol;
 
+import java.util.Random;
+
 public class App {
     public static void main(String[] args) {
         Arbol<Alumno> rank = new Arbol<>();
         node<String>[] mat = new node[4];
+        Random rand = new Random();
+        String[] lista = new String[10];
+        lista[0]="Juan Camaney";
+        lista[1]="Carlos Esparza";
+        lista[2]="Milton Batres";
+        lista[3]="Andrik Miranda";
+        lista[4]="Gaby Melendez";
+        lista[5]="Arturo Herrera";
+        lista[6]="Jorge Nitales";
+        lista[7]="Alma Marcela Silva de Alegria";
+        lista[8]="Jalil Fierro Pariente";
+        lista[9]="Ricardo Ricon";
+
+
         for (int i = 0; i < mat.length; i++) {
             mat[i] = new node<>();
         }
@@ -23,10 +39,10 @@ public class App {
         alumno = new Alumno[5];
         for (int i = 0; i < alumno.length; i++) {
             alumno[i] = new Alumno();
-            alumno[i].setNombre("Juan " + i);
+            alumno[i].setNombre(lista[rand.nextInt(10)]);
             for (int j = 0; j < mat.length; j++) {
                 alumno[i].addMateria(mat[j].getValue());
-                alumno[i].setCalif(mat[j].getValue(), (Double) Math.random() * 11);
+                for (int k = 0; k < rand.nextInt(5)+1; k++) alumno[i].setCalif(mat[j].getValue(), ((double) rand.nextInt(10)+1));
             }
         }
 
@@ -69,6 +85,10 @@ public class App {
         rank.add(milton);
 
         rank.PrintInorder();
+        System.out.println(rank.deepSearch(alumno[1]).getValue().getNombre());
+        alumno[1].printCalif();
+        System.out.println("\n\nCalifas de "+alumno[3].getNombre()+" de la materia "+mat[1].getValue());
+        alumno[3].getCalif(mat[1].getValue());
 
 
     }

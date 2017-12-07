@@ -47,7 +47,7 @@ public class Alumno implements Comparable<Alumno>, Comparator<Alumno> {
         return sum / Lista.size();
     }
 
-    //obtiene el promedio de la materia espesifica
+    //obtiene el promedio de la materia especifica
     public double getProm(String mat) {
         Materia m = null;
         for (Materia materia : Lista)
@@ -60,10 +60,10 @@ public class Alumno implements Comparable<Alumno>, Comparator<Alumno> {
     }
 
     // pone calificacion en materia
-    public void setCalif(String materi, Double unida) {
+    public void setCalif(String materi, Double unidad) {
         for (Materia materia : Lista) {
             if (materia.getNombre().equals(materi)) {
-                materia.addUnidad(unida);
+                materia.addUnidad(unidad);
                 return;
             }
         }
