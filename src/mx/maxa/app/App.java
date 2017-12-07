@@ -3,7 +3,9 @@ package mx.maxa.app;
 import mx.maxa.alumno.Alumno;
 import mx.maxa.node.node;
 import mx.maxa.tree.Arbol;
-
+/*
+* En C lo hubiera hecho con colecciones sin batallar pero #JAVA (¬_¬)
+* */
 import java.util.Random;
 
 public class App {
@@ -39,10 +41,10 @@ public class App {
         alumno = new Alumno[5];
         for (int i = 0; i < alumno.length; i++) {
             alumno[i] = new Alumno();
-            alumno[i].setNombre(lista[rand.nextInt(10)]);
+            alumno[i].setNombre(lista[rand.nextInt(10)]); //llena con nombres aleatorios del arreglo de nombres
             for (int j = 0; j < mat.length; j++) {
-                alumno[i].addMateria(mat[j].getValue());
-                for (int k = 0; k < rand.nextInt(5)+1; k++) alumno[i].setCalif(mat[j].getValue(), ((double) rand.nextInt(10)+1));
+                alumno[i].addMateria(mat[j].getValue());//llena con la lista de materias
+                for (int k = 0; k < rand.nextInt(5)+1; k++) alumno[i].setCalif(mat[j].getValue(), ((double) rand.nextInt(10)+1));//llena las unidades con califas aleatorias
             }
         }
 
@@ -59,11 +61,11 @@ public class App {
         kike.setCalif("base de datos", 10d);
         kike.setCalif("base de datos", 10d);
         kike.setCalif("base de datos", 10d);
-       /*  
-        System.out.println( kike.getProm("progra"));
-        System.out.println( kike.getProm("base de datos"));
-        System.out.println(  kike.getProm());
-        */
+
+        System.out.println( kike.getProm("programacion"));
+        System.out.println( kike.getProm("base de datos"));//saca el promedio de la materia
+        System.out.println(  kike.getProm());//saca el promedio general
+
 
         Alumno milton = new Alumno("milton");
 
